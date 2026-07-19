@@ -1,19 +1,20 @@
 let cadena = prompt("Ingrese una cadena de texto: ");
-let cadenaSeparada = cadena.split(" ");
+function marco(cadena){
+    let cadenaSeparada = cadena.split(" ");
 
-
-
-for (i in cadenaSeparada){
-    var longitudMax = 0
-    var longitud = cadenaSeparada[i].length;
-    if (cadenaSeparada[i].length > longitud) {
-        longitudMax = cadenaSeparada[i];
+    let longitudMax = 0
+    for (i in cadenaSeparada){
+        if (cadenaSeparada[i].length > longitudMax) {
+            longitudMax = cadenaSeparada[i].length;
+        }
     }
+
+    console.log("*".repeat(longitudMax + 4));
+    for (i in cadenaSeparada){
+        espacios = longitudMax - cadenaSeparada[i].length
+        console.log("*" + cadenaSeparada[i] + " ".repeat(espacios + 2) + "*");
+    }
+    console.log("*".repeat(longitudMax + 4));
 }
-console.log("*".repeat(longitudMax+4));
-for (i in cadenaSeparada){
-    
-    console.log("*"+ cadenaSeparada[i] +"*");
-    
-}
-console.log("*".repeat(longitudMax+4));
+
+marco(cadena);
